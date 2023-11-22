@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Add sorting on dogName, dogNameTail and Owner">
-      <change afterPath="$PROJECT_DIR$/src/DogSorter.java" afterDir="false" />
+    <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Add DogSorter">
+      <change afterPath="$PROJECT_DIR$/src/DogCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +22,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="300" />
+    </hideBySeverity>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -84,7 +89,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700658752844</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add DogSorter">
+      <option name="closed" value="true" />
+      <created>1700661972092</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700661972092</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -92,7 +105,8 @@
     <MESSAGE value="Add Dog logic" />
     <MESSAGE value="Add Dog Tail sorting" />
     <MESSAGE value="Add sorting on dogName, dogNameTail and Owner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add sorting on dogName, dogNameTail and Owner" />
+    <MESSAGE value="Add DogSorter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add DogSorter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
