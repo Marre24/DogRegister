@@ -1,4 +1,5 @@
 //Maximilian Ellnestam mael0424
+
 public class Owner implements Comparable<Owner> {
     private final String name;
 
