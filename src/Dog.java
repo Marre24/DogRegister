@@ -1,14 +1,21 @@
-import java.util.Arrays;
-import java.util.List;
+import java.util.ArrayList;
 
 //Maximilian Ellnestam mael0424
 public class Dog {
+
     private static final double DACHSHUND_TAIL_LENGTH = 3.7;
+    private static final ArrayList<String> DACHSHUND_TRANSLATIONS = new ArrayList<>(){{
+        add("tax");
+        add("dachshund");
+        add("teckel");
+        add("mäyräkoira");
+    }};
+
+    private Owner owner;
     private final String name;
     private final String breed;
     private final int weight;
     private int age;
-    private final List<String> dachshundTranslations = Arrays.asList("tax", "dachshund", "mäyräkoira", "teckel");
 
     public Dog(String name, String breed, int age, int weight) {
         this.name = formatName(name);
@@ -40,18 +47,36 @@ public class Dog {
 
     @Override
     public String toString() {
-        return "Name: " + name + " Age: " + age + " Breed: " + breed + " Weight: " + weight + "kg" + " Tail length: " + getTailLength();
+        return "Name: " + name + " Age: " + age + " Breed: " + breed + " Weight: " + weight + "kg" + " Tail length: " + getTailLength() + " Owner: " + getOwner();
     }
-
-
 
     public double getTailLength(){
         double tailLength = (age * weight) / 10d;
 
-        if (dachshundTranslations.contains(breed.toLowerCase()))
+        if (DACHSHUND_TRANSLATIONS.contains(breed.toLowerCase()))
             tailLength = DACHSHUND_TAIL_LENGTH;
 
         return tailLength;
+    }
+
+    public boolean setOwner(Owner owner) {
+        if (owner == null){
+            this.owner.removeDog(this);
+            this.owner = null;
+            return true;
+        }
+
+        if (this.owner == null) {
+            this.owner = owner;
+            this.owner.addDog(this);
+            return true;
+        }
+
+        return false;
+    }
+
+    public Owner getOwner() {
+        return owner;
     }
 
     private static String formatName(String name){

@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Add DogCollection">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OwnerCollection.java" afterDir="false" />
+    <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Add OwnerCollection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DogCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DogCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OwnerCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OwnerCollection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Maxi/Documents/programering/IntelliJ/Test",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
@@ -110,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700666289570</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add OwnerCollection">
+      <option name="closed" value="true" />
+      <created>1700671095552</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700671095552</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -120,18 +129,8 @@
     <MESSAGE value="Add sorting on dogName, dogNameTail and Owner" />
     <MESSAGE value="Add DogSorter" />
     <MESSAGE value="Add DogCollection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add DogCollection" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DogNameComparator.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Add OwnerCollection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add OwnerCollection" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

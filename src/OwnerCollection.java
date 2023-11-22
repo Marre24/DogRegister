@@ -15,7 +15,7 @@ public class OwnerCollection {
 
     public boolean removeOwner(Owner owner){
         int index = findIndex(owner);
-        if (index < 0)
+        if (index < 0 || !owner.getDogs().isEmpty())
             return false;
         for (int j = index; j < owners.length - 1; j++)
             owners[j] = owners[j + 1];
@@ -24,7 +24,7 @@ public class OwnerCollection {
     }
     public boolean removeOwner(String name){
         int index = findIndex(name);
-        if (index < 0)
+        if (index < 0 || !owners[index].getDogs().isEmpty())
             return false;
         for (int j = index; j < owners.length - 1; j++)
             owners[j] = owners[j + 1];
@@ -52,7 +52,7 @@ public class OwnerCollection {
 
     private int findIndex(Owner owner){
         for (int i = 0; i < owners.length; i++)
-            if (owners[i] == owner)
+            if (Objects.equals(owners[i], owner))
                 return i;
 
         return -1;

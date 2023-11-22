@@ -1,7 +1,11 @@
 //Maximilian Ellnestam mael0424
 
+import java.util.ArrayList;
+
 public class Owner implements Comparable<Owner> {
     private final String name;
+
+    private final ArrayList<Dog> dogs = new ArrayList<Dog>();
 
     public Owner(String name){
         this.name = formatName(name);
@@ -13,7 +17,26 @@ public class Owner implements Comparable<Owner> {
 
     @Override
     public String toString() {
-        return name;
+        StringBuilder string = new StringBuilder();
+
+        for (Dog dog : dogs)
+            string.append(dog.getName());
+
+        return "Name: " + name + " Owned Dogs: " + string;
+    }
+
+    public boolean addDog(Dog dog){
+        if (dog.getOwner() == null || dog.getOwner() == this)
+            return dogs.add(dog);
+        return false;
+    }
+
+    public boolean removeDog(Dog dog){
+        return dogs.remove(dog);
+    }
+
+    public ArrayList<Dog> getDogs() {
+        return (ArrayList<Dog>) dogs.clone();
     }
 
     private static String formatName(String name){

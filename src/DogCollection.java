@@ -13,11 +13,13 @@ public class DogCollection {
     }
 
     public boolean removeDog(Dog dog){
+        if (dog.getOwner() != null)
+            return false;
         return dogs.remove(dog);
     }
     public boolean removeDog(String name){
         Optional<Dog> dog = dogs.stream().filter(x -> x.getName().equals(name)).findFirst();
-        if (!containsDog(name) || dog.isEmpty())
+        if (!containsDog(name) || dog.isEmpty() || dog.get().getOwner() != null)
             return false;
         return dogs.remove(dog.get());
     }
