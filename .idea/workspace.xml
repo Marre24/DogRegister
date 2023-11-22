@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Add Dog logic">
-      <change afterPath="$PROJECT_DIR$/src/DogTailComparator.java" afterDir="false" />
+    <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Add Dog Tail sorting">
+      <change afterPath="$PROJECT_DIR$/src/DogNameComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DogTailNameComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Owner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,13 +70,33 @@
       <option name="project" value="LOCAL" />
       <updated>1700598559425</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add Dog Tail sorting">
+      <option name="closed" value="true" />
+      <created>1700657498977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700657498977</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Owner name logic" />
     <MESSAGE value="Add Dog logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Dog logic" />
+    <MESSAGE value="Add Dog Tail sorting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Dog Tail sorting" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DogNameComparator.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,5 +1,5 @@
 //Maximilian Ellnestam mael0424
-public class Owner {
+public class Owner implements Comparable<Owner> {
     private final String name;
 
     public Owner(String name){
@@ -39,5 +39,11 @@ public class Owner {
         }
 
         return formattedName.toString();
+    }
+
+
+    @Override
+    public int compareTo(Owner owner) {
+        return name.compareTo(owner.getName());
     }
 }
