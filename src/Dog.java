@@ -18,10 +18,8 @@ public class Dog {
     }
 
     public void updateAge() {
-        if (age < Integer.MAX_VALUE){
+        if (age < Integer.MAX_VALUE)
             age++;
-            return;
-        }
     }
 
     public int getWeight() {
