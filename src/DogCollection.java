@@ -4,7 +4,7 @@ import java.util.Optional;
 //Maximilian Ellnestam mael0424
 public class DogCollection {
 
-    private ArrayList<Dog> dogs = new ArrayList<>();
+    private final ArrayList<Dog> dogs = new ArrayList<>();
 
     public boolean addDog(Dog dog){
         if (containsDog(dog.getName()))

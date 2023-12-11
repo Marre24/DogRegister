@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Owner implements Comparable<Owner> {
     private final String name;
 
-    private final ArrayList<Dog> dogs = new ArrayList<Dog>();
+    private final ArrayList<Dog> dogs = new ArrayList<>();
 
     public Owner(String name){
         this.name = formatName(name);
