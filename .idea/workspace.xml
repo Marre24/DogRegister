@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Add Owner-Dog connections">
-      <change afterPath="$PROJECT_DIR$/src/DogRegister.java" afterDir="false" />
+    <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Add DogRegister">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InputReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DogCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DogCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DogRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DogRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Owner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700734369810</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add DogRegister">
+      <option name="closed" value="true" />
+      <created>1702304226222</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1702304226222</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -141,7 +149,8 @@
     <MESSAGE value="Add DogCollection" />
     <MESSAGE value="Add OwnerCollection" />
     <MESSAGE value="Add Owner-Dog connections" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Owner-Dog connections" />
+    <MESSAGE value="Add DogRegister" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add DogRegister" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
