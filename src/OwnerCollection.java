@@ -6,28 +6,34 @@ public class OwnerCollection {
     private Owner[] owners = new Owner[0];
 
     public boolean addOwner(Owner owner){
-        if (containsOwner(owner))
+        if (owner.getName().isEmpty()){
+            System.out.println("ERROR");
             return false;
+        }
+        if (containsOwner(owner.getName())){
+            System.out.println("ERROR: Owner is already existing");
+            return false;
+        }
         incrementSize();
         owners[owners.length - 1] = owner;
         return owners[owners.length - 1] != null;
     }
 
     public boolean removeOwner(Owner owner){
-        int index = findIndex(owner);
-        if (index < 0 || !owner.getDogs().isEmpty())
-            return false;
-        for (int j = index; j < owners.length - 1; j++)
-            owners[j] = owners[j + 1];
-        decrementSize();
-        return true;
+        return removeOwner(owner.getName());
     }
+
     public boolean removeOwner(String name){
         int index = findIndex(name);
-        if (index < 0 || !owners[index].getDogs().isEmpty())
+        if (index < 0)
             return false;
+
+        if (!owners[index].getDogs().isEmpty())
+            return false;
+
         for (int j = index; j < owners.length - 1; j++)
             owners[j] = owners[j + 1];
+
         decrementSize();
         return true;
     }
@@ -41,7 +47,9 @@ public class OwnerCollection {
     }
 
     public ArrayList<Owner> getOwners() {
-        return new ArrayList<>(Arrays.stream(owners).toList());
+        Arrays.sort(owners);
+        ArrayList<Owner> ownerArrayList = new ArrayList<>(Arrays.stream(owners).toList());
+        return ownerArrayList;
     }
 
     public Owner getOwner(String name){

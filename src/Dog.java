@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 //Maximilian Ellnestam mael0424
@@ -12,14 +13,17 @@ public class Dog {
     }};
 
     private Owner owner;
-    private final String name;
-    private final String breed;
+    private String name;
+    private String breed;
     private final int weight;
     private int age;
+    private final DecimalFormat decimalFormat = new DecimalFormat("##.#");
 
     public Dog(String name, String breed, int age, int weight) {
-        this.name = formatName(name);
-        this.breed = formatName(breed);
+        if (!name.isEmpty())
+            this.name = formatName(name);
+        if (!breed.isEmpty())
+            this.breed = formatName(breed);
         this.age = age;
         this.weight = weight;
     }
@@ -45,9 +49,16 @@ public class Dog {
         return breed;
     }
 
+    public Owner getOwner() {
+        return owner;
+    }
+
     @Override
     public String toString() {
-        return "Name: " + name + " Age: " + age + " Breed: " + breed + " Weight: " + weight + "kg" + " Tail length: " + getTailLength() + " Owner: " + getOwner();
+        if (getOwner() == null)
+            return "Name: " + name + " Age: " + age + " Breed: " + breed + " Weight: " + weight + "kg" + " Tail length: " + decimalFormat.format(getTailLength()) + " Owner: ";
+        else
+            return "Name: " + name + " Age: " + age + " Breed: " + breed + " Weight: " + weight + "kg" + " Tail length: " + decimalFormat.format(getTailLength()) + " Owner: " + getOwner().getName();
     }
 
     public double getTailLength(){
@@ -59,25 +70,23 @@ public class Dog {
         return tailLength;
     }
 
-    public boolean setOwner(Owner owner) {
-        if (owner == null){
-            this.owner.removeDog(this);
-            this.owner = null;
+    public boolean setOwner(Owner newOwner) {
+        if (newOwner == null && owner != null){
+            if(!owner.removeDog(this))
+                System.out.println("ERROR: Could not remove dog from owner");
+            owner = null;
             return true;
         }
 
-        if (this.owner == null) {
-            this.owner = owner;
-            this.owner.addDog(this);
+        if (owner == null && newOwner != null) {
+            owner = newOwner;
+            owner.addDog(this);
             return true;
         }
 
         return false;
     }
 
-    public Owner getOwner() {
-        return owner;
-    }
 
     private static String formatName(String name){
         if (name.indexOf("-") != name.lastIndexOf("-"))

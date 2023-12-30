@@ -7,6 +7,10 @@ public class DogCollection {
     private final ArrayList<Dog> dogs = new ArrayList<>();
 
     public boolean addDog(Dog dog){
+        if (dog.getName().isEmpty()){
+            System.out.println("ERROR");
+            return false;
+        }
         if (containsDog(dog.getName()))
             return false;
         return dogs.add(dog);
@@ -19,8 +23,10 @@ public class DogCollection {
     }
     public boolean removeDog(String name){
         Optional<Dog> dog = dogs.stream().filter(x -> x.getName().equals(name)).findFirst();
-        if (!containsDog(name) || dog.isEmpty() || dog.get().getOwner() != null)
+        if (!containsDog(name) || dog.isEmpty())
             return false;
+        if (dog.get().getOwner() != null)
+            dog.get().getOwner().removeDog(dog.get());
         return dogs.remove(dog.get());
     }
 

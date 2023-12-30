@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Add DogRegister">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InputReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DogCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DogCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DogRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DogRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OwnerCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OwnerCollection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

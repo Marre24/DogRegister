@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 
 public class Owner implements Comparable<Owner> {
-    private final String name;
+    private String name = "";
 
     private final ArrayList<Dog> dogs = new ArrayList<>();
 
@@ -19,8 +19,11 @@ public class Owner implements Comparable<Owner> {
     public String toString() {
         StringBuilder string = new StringBuilder();
 
-        for (Dog dog : dogs)
-            string.append(dog.getName());
+        for (int i = 0; i < dogs.size(); i++){
+            string.append(dogs.get(i).getName());
+            if (i < dogs.size() - 1)
+                string.append(", ");
+        }
 
         return "Name: " + name + " Owned Dogs: " + string;
     }
