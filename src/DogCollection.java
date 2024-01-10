@@ -21,6 +21,7 @@ public class DogCollection {
             return false;
         return dogs.remove(dog);
     }
+
     public boolean removeDog(String name){
         Optional<Dog> dog = dogs.stream().filter(x -> x.getName().equals(name)).findFirst();
         if (!containsDog(name) || dog.isEmpty())
@@ -39,7 +40,7 @@ public class DogCollection {
     }
 
     public ArrayList<Dog> getDogs() {
-        DogSorter.sortDogs(new DogTailNameComparator(), dogs);
+        DogSorter.sortDogs(new DogNameComparator(), dogs);
         return (ArrayList<Dog>) dogs.clone();
     }
 
@@ -51,8 +52,10 @@ public class DogCollection {
     }
 
     public ArrayList<Dog> getDogsWithMinimumTailLength(double d){
-        ArrayList<Dog> dogArrayList = new ArrayList<>(dogs.stream().filter(x -> x.getTailLength() >= d).toList());
-        DogSorter.sortDogs(new DogTailNameComparator(), dogArrayList);
-        return dogArrayList;
+        if (d == 0)
+            DogSorter.sortDogs(new DogTailNameComparator(), dogs);
+        else
+            DogSorter.sortDogs(new DogNameComparator(), dogs);
+        return new ArrayList<>(dogs.stream().filter(x -> x.getTailLength() >= d).toList());
     }
 }

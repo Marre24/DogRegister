@@ -131,10 +131,8 @@ public class DogRegister {
             System.out.println("ERROR: No dogs in the register.");
         } else {
             float length = input.readFloat("Enter minimum tail length");
-            for (Dog dog : dogList) {
-                if (length <= dog.getTailLength())
-                    System.out.println(dog);
-            }
+            for (Dog dog : dogs.getDogsWithMinimumTailLength(length))
+                System.out.println(dog);
         }
     }
 

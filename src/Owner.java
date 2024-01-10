@@ -19,6 +19,9 @@ public class Owner implements Comparable<Owner> {
     public String toString() {
         StringBuilder string = new StringBuilder();
 
+        for (Dog dog : dogs)
+            string.append(dog.getName()).append(",");
+
         for (int i = 0; i < dogs.size(); i++){
             string.append(dogs.get(i).getName());
             if (i < dogs.size() - 1)
