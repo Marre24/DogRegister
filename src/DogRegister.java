@@ -35,7 +35,7 @@ public class DogRegister {
     }
 
     private boolean runCommandLoop() {
-        //Add menu
+        displayMenu();
         String command = input.readString("Command").toLowerCase();
         switch (command) {
             case COMMAND_REGISTER_OWNER:
@@ -73,6 +73,21 @@ public class DogRegister {
         }
         return true;
     }
+
+    private void displayMenu() {
+        System.out.println("Possible commands:");
+        System.out.println("Register New Owner");
+        System.out.println("Remove Owner");
+        System.out.println("Register New Dog");
+        System.out.println("Remove Dog");
+        System.out.println("List Dogs");
+        System.out.println("List Owners");
+        System.out.println("Increase Age");
+        System.out.println("Give Dog to Owner");
+        System.out.println("Remove Dog from Owner");
+        System.out.println("Exit");
+    }
+
 
     private void registerNewOwner() {
         String ownerName = input.readString("Enter owner name");

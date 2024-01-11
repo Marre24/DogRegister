@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Last Commit">
+    <list default="true" id="55df30dc-adfb-43c9-8aa5-76771838fe83" name="Changes" comment="Small changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DogCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DogCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DogRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DogRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DogSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DogSorter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OwnerCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OwnerCollection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704900916043</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Small changes">
+      <option name="closed" value="true" />
+      <created>1704989569616</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1704989569616</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -183,7 +187,8 @@
     <MESSAGE value="Add DogRegister" />
     <MESSAGE value="Refactoring and small changes" />
     <MESSAGE value="Last Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Last Commit" />
+    <MESSAGE value="Small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small changes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
