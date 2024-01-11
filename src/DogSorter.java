@@ -5,17 +5,17 @@ import java.util.Comparator;
 public class DogSorter {
 
     public static int sortDogs(Comparator<Dog> dogComparator, ArrayList<Dog> dogs){
-        int i = 0;
+        int swapCount = 0;
 
         for (int j = 0; j < dogs.size(); j++){
             int nextIndex = nextDog(dogComparator, dogs, j);
             if (nextIndex == j)
                 continue;
             swapDogs(dogs, j, nextIndex);
-            i++;
+            swapCount++;
         }
 
-        return i;
+        return swapCount;
     }
 
     private static void swapDogs(ArrayList<Dog> dogs, int i, int j){
@@ -41,6 +41,4 @@ public class DogSorter {
 
         return nextIndex;
     }
-
-
 }

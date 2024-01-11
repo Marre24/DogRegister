@@ -3,19 +3,17 @@ import java.util.HashSet;
 import java.util.Scanner;
 //Maximilian Ellnestam mael0424
 public class InputReader {
-    private static HashSet<InputStream> usedStreams = new HashSet<>();
-    private Scanner input;
+    private static final HashSet<InputStream> USED_STREAMS = new HashSet<>();
+    private final Scanner input;
     public InputReader(){
-        if (!usedStreams.add(System.in)) {
+        if (!USED_STREAMS.add(System.in))
             throw new IllegalStateException("ERROR");
-        }
         input = new Scanner(System.in);
     }
 
     public InputReader(InputStream stream){
-        if (!usedStreams.add(stream)) {
+        if (!USED_STREAMS.add(stream))
             throw new IllegalStateException("ERROR");
-        }
         input = new Scanner(stream);
     }
 
@@ -30,7 +28,7 @@ public class InputReader {
         return Float.parseFloat(input.nextLine().replace(',', '.'));
     }
 
-    public String nextLine(String string){
+    public String readString(String string){
         System.out.print(string + "?>");
         return input.nextLine();
     }

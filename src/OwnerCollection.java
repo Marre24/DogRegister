@@ -48,8 +48,7 @@ public class OwnerCollection {
 
     public ArrayList<Owner> getOwners() {
         Arrays.sort(owners);
-        ArrayList<Owner> ownerArrayList = new ArrayList<>(Arrays.stream(owners).toList());
-        return ownerArrayList;
+        return new ArrayList<>(Arrays.stream(owners).toList());
     }
 
     public Owner getOwner(String name){

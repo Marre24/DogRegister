@@ -7,10 +7,6 @@ public class DogCollection {
     private final ArrayList<Dog> dogs = new ArrayList<>();
 
     public boolean addDog(Dog dog){
-        if (dog.getName().isEmpty()){
-            System.out.println("ERROR");
-            return false;
-        }
         if (containsDog(dog.getName()))
             return false;
         return dogs.add(dog);
@@ -32,7 +28,7 @@ public class DogCollection {
     }
 
     public boolean containsDog(String name){
-        return dogs.stream().anyMatch(x -> x.getName().equals(name));
+        return dogs.stream().anyMatch(dog -> dog.getName().equals(name));
     }
 
     public boolean containsDog(Dog dog){
@@ -56,6 +52,6 @@ public class DogCollection {
             DogSorter.sortDogs(new DogTailNameComparator(), dogs);
         else
             DogSorter.sortDogs(new DogNameComparator(), dogs);
-        return new ArrayList<>(dogs.stream().filter(x -> x.getTailLength() >= d).toList());
+        return new ArrayList<>(dogs.stream().filter(dog -> dog.getTailLength() >= d).toList());
     }
 }

@@ -13,68 +13,83 @@ public class DogRegister {
     private static final String COMMAND_REMOVE_DOG_FROM_OWNER = "remove dog from owner";
     private static final String COMMAND_EXIT = "exit";
 
-    public static void main(String[] args) {
-        OwnerCollection owners = new OwnerCollection();
-        DogCollection dogs = new DogCollection();
-        boolean readInput = true;
-        InputReader input = new InputReader();
+    private OwnerCollection owners;
+    private DogCollection dogs;
+    private InputReader input;
 
-        while (readInput) {
-            String command = input.nextLine("Command").toLowerCase();
-            switch (command) {
-                case COMMAND_REGISTER_OWNER:
-                    registerNewOwner(owners, input);
-                    break;
-                case COMMAND_REMOVE_OWNER:
-                    removeOwner(owners, input, dogs);
-                    break;
-                case COMMAND_REGISTER_DOG:
-                    registerDog(input, dogs);
-                    break;
-                case COMMAND_REMOVE_DOG:
-                    removeDog(dogs, input);
-                    break;
-                case COMMAND_LIST_DOGS:
-                    listDogs(dogs, input);
-                    break;
-                case COMMAND_LIST_OWNERS:
-                    listOwners(owners);
-                    break;
-                case COMMAND_INCREASE_AGE:
-                    increaseDogAge(dogs, input);
-                    break;
-                case COMMAND_GIVE_DOG_TO_OWNER:
-                    giveDogToOwner(input, owners, dogs);
-                    break;
-                case COMMAND_REMOVE_DOG_FROM_OWNER:
-                    removeDogFromOwner(input, owners, dogs);
-                    break;
-                case COMMAND_EXIT:
-                    readInput = false;
-                    break;
-                default:
-                    System.out.println("Error: Invalid command");
-                    break;
-            }
-        }
+    public static void main(String[] args) {
+
+        boolean readInput = true;
+        DogRegister register = new DogRegister();
+
+        register.init();
+        while (readInput)
+            if (!register.runCommandLoop())
+                readInput = false;
     }
 
-    private static void registerNewOwner(OwnerCollection owners, InputReader input) {
-        String ownerName = input.nextLine("Enter owner name");
+    private void init(){
+        owners = new OwnerCollection();
+        dogs = new DogCollection();
+        input = new InputReader();
+    }
+
+    private boolean runCommandLoop() {
+        //Add menu
+        String command = input.readString("Command").toLowerCase();
+        switch (command) {
+            case COMMAND_REGISTER_OWNER:
+                registerNewOwner();
+                break;
+            case COMMAND_REMOVE_OWNER:
+                removeOwner();
+                break;
+            case COMMAND_REGISTER_DOG:
+                registerDog();
+                break;
+            case COMMAND_REMOVE_DOG:
+                removeDog();
+                break;
+            case COMMAND_LIST_DOGS:
+                listDogs();
+                break;
+            case COMMAND_LIST_OWNERS:
+                listOwners();
+                break;
+            case COMMAND_INCREASE_AGE:
+                increaseDogAge();
+                break;
+            case COMMAND_GIVE_DOG_TO_OWNER:
+                giveDogToOwner();
+                break;
+            case COMMAND_REMOVE_DOG_FROM_OWNER:
+                removeDogFromOwner();
+                break;
+            case COMMAND_EXIT:
+                return false;
+            default:
+                System.out.println("Error: Invalid command");
+                break;
+        }
+        return true;
+    }
+
+    private void registerNewOwner() {
+        String ownerName = input.readString("Enter owner name");
         while (ownerName.isEmpty() || ownerName.matches("[\\s\\t]*")) {
             System.out.println("Error: A blank string is not allowed, try again");
-            ownerName = input.nextLine("Enter owner name");
+            ownerName = input.readString("Enter owner name");
         }
         owners.addOwner(new Owner(ownerName));
         System.out.println("The owner " + ownerName + " has been added to the register");
     }
 
-    private static void removeOwner(OwnerCollection owners, InputReader input, DogCollection dogs) {
+    private void removeOwner() {
         if (owners.getOwners().isEmpty()){
             System.out.println("Error: No owners in register");
             return;
         }
-        String ownerName = input.nextLine("Enter owner name");
+        String ownerName = input.readString("Enter owner name");
         Owner owner = owners.getOwner(ownerName);
         if (owner != null) {
             if (!owner.getDogs().isEmpty())
@@ -90,20 +105,20 @@ public class DogRegister {
         }
     }
 
-    private static void registerDog(InputReader input, DogCollection dogs) {
-        String name = input.nextLine("Enter owner name");
+    private void registerDog() {
+        String name = input.readString("Enter owner name");
         while (name.isEmpty() || name.matches("[\\s\\t]*")) {
             System.out.println("Error: A blank string is not allowed, try again");
-            name = input.nextLine("Enter owner name");
+            name = input.readString("Enter owner name");
         }
         if (dogs.containsDog(name)){
             System.out.println("ERROR");
             return;
         }
-        String breed = input.nextLine("Enter dog breed");
+        String breed = input.readString("Enter dog breed");
         while (breed.isEmpty() || breed.matches("[\\s\\t]*")) {
             System.out.println("Error: A blank string is not allowed, try again");
-            breed = input.nextLine("Enter owner name");
+            breed = input.readString("Enter owner name");
         }
         int age = input.readInt("Enter dog age");
         int weight = input.readInt("Enter dog weight");
@@ -111,12 +126,12 @@ public class DogRegister {
         System.out.println("The dog " + name + " has been added to the register");
     }
 
-    private static void removeDog(DogCollection dogs, InputReader input) {
+    private void removeDog() {
         if (dogs.getDogs().isEmpty()){
             System.out.println("Error: No dogs in register");
             return;
         }
-        String dogName = input.nextLine("Enter dog name");
+        String dogName = input.readString("Enter dog name");
         if (dogs.getDog(dogName) != null) {
             if (dogs.removeDog(dogName))
                 System.out.println("The dog " + dogName + " has been removed from the register");
@@ -125,7 +140,7 @@ public class DogRegister {
         }
     }
 
-    private static void listDogs(DogCollection dogs, InputReader input) {
+    private void listDogs() {
         List<Dog> dogList = dogs.getDogs();
         if (dogList.isEmpty()) {
             System.out.println("ERROR: No dogs in the register.");
@@ -136,7 +151,7 @@ public class DogRegister {
         }
     }
 
-    private static void listOwners(OwnerCollection owners) {
+    private void listOwners() {
         List<Owner> ownerList = owners.getOwners();
         if (ownerList.isEmpty()) {
             System.out.println("ERROR: No owners in the register.");
@@ -147,12 +162,12 @@ public class DogRegister {
         }
     }
 
-    private static void increaseDogAge(DogCollection dogs, InputReader input) {
+    private void increaseDogAge() {
         if (dogs.getDogs().isEmpty()){
             System.out.println("Error");
             return;
         }
-        String dogName = input.nextLine("Enter dog name");
+        String dogName = input.readString("Enter dog name");
         Dog dog = dogs.getDog(dogName);
         if (dog != null) {
             dog.updateAge();
@@ -162,18 +177,18 @@ public class DogRegister {
         }
     }
 
-    private static void giveDogToOwner(InputReader input, OwnerCollection owners, DogCollection dogs) {
+    private void giveDogToOwner() {
         if (owners.getOwners().isEmpty() || dogs.getDogs().isEmpty()){
             System.out.println("Error");
             return;
         }
-        String dogName = input.nextLine("Enter dog name");
+        String dogName = input.readString("Enter dog name");
         if (dogs.getDog(dogName) == null || dogs.getDog(dogName).getOwner() != null){
             System.out.println("Error");
             return;
         }
 
-        String ownerName = input.nextLine("Enter owner name");
+        String ownerName = input.readString("Enter owner name");
 
         Dog dog = dogs.getDog(dogName);
         Owner owner = owners.getOwner(ownerName);
@@ -186,12 +201,12 @@ public class DogRegister {
         }
     }
 
-    private static void removeDogFromOwner(InputReader input, OwnerCollection owners, DogCollection dogs) {
+    private void removeDogFromOwner() {
         if (owners.getOwners().isEmpty() || dogs.getDogs().isEmpty()){
             System.out.println("Error");
             return;
         }
-        String dogName = input.nextLine("Enter dog name");
+        String dogName = input.readString("Enter dog name");
         if (!dogs.containsDog(dogName) || dogs.getDog(dogName).getOwner() == null){
             System.out.println("Error");
             return;
