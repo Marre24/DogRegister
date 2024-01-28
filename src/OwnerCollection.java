@@ -66,7 +66,7 @@ public class OwnerCollection {
     }
     private int findIndex(String name){
         for (int i = 0; i < owners.length; i++)
-            if (owners[i].getName().equals(name))
+            if (owners[i].getName().equalsIgnoreCase(name))
                 return i;
 
         return -1;

@@ -148,6 +148,8 @@ public class DogRegister {
         }
         String dogName = input.readString("Enter dog name");
         if (dogs.getDog(dogName) != null) {
+            if (dogs.getDog(dogName).getOwner() != null)
+                dogs.getDog(dogName).setOwner(null);
             if (dogs.removeDog(dogName))
                 System.out.println("The dog " + dogName + " has been removed from the register");
         } else {

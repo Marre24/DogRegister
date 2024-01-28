@@ -32,7 +32,7 @@ public class Owner implements Comparable<Owner> {
     }
 
     public boolean addDog(Dog dog){
-        if (dog.getOwner() == null || dog.getOwner() == this)
+        if (dog != null && (dog.getOwner() == null || dog.getOwner() == this) && !dogs.contains(dog))
             return dogs.add(dog);
         return false;
     }
@@ -64,7 +64,7 @@ public class Owner implements Comparable<Owner> {
 
         for (String splitName : names){
             formattedName.append(splitName);
-            if (!splitName.equals(names[names.length - 1]))
+            if (!splitName.equalsIgnoreCase(names[names.length - 1]))
                 formattedName.append(" ");
         }
 

@@ -110,7 +110,7 @@ public class Dog {
 
         for (String splitName : names){
             formattedName.append(splitName);
-            if (!splitName.equals(names[names.length - 1]))
+            if (!splitName.equalsIgnoreCase(names[names.length - 1]))
                 formattedName.append(" ");
         }
 

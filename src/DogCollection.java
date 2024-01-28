@@ -19,17 +19,16 @@ public class DogCollection {
     }
 
     public boolean removeDog(String name){
-        Optional<Dog> dog = dogs.stream().filter(x -> x.getName().equals(name)).findFirst();
-        if (!containsDog(name) || dog.isEmpty())
+        Optional<Dog> dog = dogs.stream().filter(x -> x.getName().equalsIgnoreCase(name)).findFirst();
+        if (!containsDog(name) || dog.isEmpty() || dog.get().getOwner() != null)
             return false;
-        if (dog.get().getOwner() != null)
-            dog.get().getOwner().removeDog(dog.get());
         return dogs.remove(dog.get());
     }
 
     public boolean containsDog(String name){
-        return dogs.stream().anyMatch(dog -> dog.getName().equals(name));
+        return dogs.stream().anyMatch(dog -> dog.getName().equalsIgnoreCase(name));
     }
+
 
     public boolean containsDog(Dog dog){
         return dogs.contains(dog);
@@ -41,7 +40,7 @@ public class DogCollection {
     }
 
     public Dog getDog(String name){
-        Optional<Dog> dog = dogs.stream().filter(x -> x.getName().equals(name)).findFirst();
+        Optional<Dog> dog = dogs.stream().filter(x -> x.getName().equalsIgnoreCase(name)).findFirst();
         if (!containsDog(name) || dog.isEmpty())
             return null;
         return dog.get();
